@@ -1,11 +1,15 @@
 import Layout from "../components/Layout";
+import PriceList from "../components/PriceList";
+
 import axios from "axios";
-const Index = (props) => {
+
+const Index = ({ bpi }) => {
   return (
     <Layout>
       <div>
         <h1>Welcome To Bitcoin Prices</h1>
-        {props.bpi.USD.code}
+        <p>Check current Bitcoin Rates</p>
+        <PriceList bpi={bpi} />
       </div>
     </Layout>
   );
@@ -16,7 +20,7 @@ Index.getInitialProps = async function () {
   const { data } = await axios.get(
     "https://api.coindesk.com/v1/bpi/currentprice.json"
   );
-  console.log(data);
+
   return {
     bpi: data.bpi,
   };
