@@ -5,13 +5,11 @@ import axios from "axios";
 
 const Index = ({ bpi }) => {
   return (
-    <Layout>
-      <div>
-        <h1>Welcome To Bitcoin Prices</h1>
-        <p>Check current Bitcoin Rates</p>
-        <PriceList bpi={bpi} />
-      </div>
-    </Layout>
+    <div>
+      <h1>Welcome To Bitcoin Prices</h1>
+      <p>Check current Bitcoin Rates</p>
+      <PriceList bpi={bpi} />
+    </div>
   );
 };
 
